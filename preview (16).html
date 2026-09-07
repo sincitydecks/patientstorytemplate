@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RFDS SA/NT — Saving baby Xavier</title>
+<style>
+/* ================================================================
+   RFDS SA/NT — XAVIER STORY JOURNEY v10
+   WAGTAIL RAW HTML BLOCK / SELF CONTAINED
+   ---------------------------------------------------------------
+   Build phases:
+   01. Design system + shell
+   02. Hero + cinematic entry
+   03. Human story + cinema windows
+   04. RSV scroll visualisation
+   05. Distance / flight sequence
+   06. Response + cinema
+   07. Network / collaboration interaction
+   08. Outcome + emotional close
+   09. Performance / accessibility / graceful degradation
+   ================================================================ */
+
+#rfds-xavier-v10{
+  --deep:#050d28;
+  --deep-2:#081332;
+  --blue:#00549f;
+  --orange:#f05b22;
+  --white:#fff;
+  --ink:#15263d;
+  --muted:#6b7988;
+  --paper:#f5f7f9;
+  --line:rgba(255,255,255,.14);
+  --dark-line:rgba(21,38,61,.13);
+  --ease:cubic-bezier(.22,.72,.21,1);
+  --max:1440px;
+  font-family:museo-sans,"Museo Sans",Arial,sans-serif;
+  color:var(--white);
+  background:var(--deep);
+  isolation:isolate;
+  position:relative;
+  overflow:clip;
+}
+#rfds-xavier-v10 *,#rfds-xavier-v10 *::before,#rfds-xavier-v10 *::after{box-sizing:border-box}
+#rfds-xavier-v10 a{color:inherit;text-decoration:none}
+#rfds-xavier-v10 button{font:inherit}
+#rfds-xavier-v10 img,#rfds-xavier-v10 video{display:block;max-width:100%}
+#rfds-xavier-v10 .v10-wrap{width:min(var(--max),100%);margin:0 auto;padding:0 clamp(20px,5vw,76px)}
+#rfds-xavier-v10 .v10-kicker{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+#rfds-xavier-v10 .v10-orange{color:var(--orange)!important}
+#rfds-xavier-v10 .v10-quiet{color:rgba(255,255,255,.60)}
+#rfds-xavier-v10 .v10-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+
+/* ---------------------------------------------------------------
+   01. SHELL / NAVIGATION
+   --------------------------------------------------------------- */
+#rfds-xavier-v10 .v10-header{
+  position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:100;
+  width:min(calc(100% - 28px),1180px);display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:8px 9px 8px 12px;border:1px solid rgba(255,255,255,.14);border-radius:999px;
+  background:rgba(5,13,40,.78);backdrop-filter:blur(18px) saturate(120%);-webkit-backdrop-filter:blur(18px) saturate(120%);
+  box-shadow:0 16px 50px rgba(0,0,0,.22)
+}
+#rfds-xavier-v10 .v10-logo{width:136px;height:auto;filter:brightness(0) invert(1)}
+#rfds-xavier-v10 .v10-header-meta{display:flex;align-items:center;gap:12px}
+#rfds-xavier-v10 .v10-header-meta span{font-size:9px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+#rfds-xavier-v10 .v10-btn{
+  display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 16px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.07);color:#fff;
+  font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;
+  transition:transform .35s var(--ease),background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease);
+}
+#rfds-xavier-v10 .v10-btn:hover{transform:translateY(-2px);background:#fff;color:var(--deep);border-color:#fff}
+#rfds-xavier-v10 .v10-btn--orange{background:var(--orange);border-color:var(--orange);box-shadow:0 12px 30px rgba(240,91,34,.18)}
+#rfds-xavier-v10 .v10-btn--orange:hover{color:var(--orange)}
+
+#rfds-xavier-v10 .v10-rail{position:fixed;z-index:90;left:18px;top:50%;transform:translateY(-50%);display:grid;gap:8px}
+#rfds-xavier-v10 .v10-rail button{width:25px;height:25px;padding:0;border:0;background:transparent;position:relative;cursor:pointer}
+#rfds-xavier-v10 .v10-rail button::before{content:"";position:absolute;inset:8px;border-radius:50%;background:rgba(255,255,255,.28);transition:inset .35s var(--ease),background .35s var(--ease),box-shadow .35s var(--ease)}
+#rfds-xavier-v10 .v10-rail button[aria-current="true"]::before{inset:5px;background:var(--orange);box-shadow:0 0 0 5px rgba(240,91,34,.12)}
+#rfds-xavier-v10 .v10-rail button span{position:absolute;left:32px;top:50%;transform:translateY(-50%) translateX(-5px);opacity:0;pointer-events:none;white-space:nowrap;padding:7px 9px;border-radius:8px;background:#fff;color:var(--ink);font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:opacity .2s var(--ease),transform .2s var(--ease)}
+#rfds-xavier-v10 .v10-rail button:hover span,#rfds-xavier-v10 .v10-rail button:focus-visible span{opacity:1;transform:translateY(-50%) translateX(0)}
+
+/* ---------------------------------------------------------------
+   02. HERO
+   --------------------------------------------------------------- */
+#rfds-xavier-v10 .v10-hero{position:relative;min-height:100svh;background:var(--deep);display:grid;align-items:end;overflow:hidden}
+#rfds-xavier-v10 .v10-hero-media{position:absolute;inset:0;overflow:hidden;background:#08112d}
+#rfds-xavier-v10 .v10-hero-media img,#rfds-xavier-v10 .v10-hero-media video{width:100%;height:100%;object-fit:cover;object-position:center 38%;opacity:.46;filter:saturate(.82) contrast(1.04);transform:scale(1.015)}
+#rfds-xavier-v10 .v10-hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,13,40,.06) 0%,rgba(5,13,40,.12) 48%,rgba(5,13,40,.98) 91%,rgba(5,13,40,1) 100%)}
+#rfds-xavier-v10 .v10-hero-inner{position:relative;z-index:2;padding-top:160px;padding-bottom:74px}
+#rfds-xavier-v10 .v10-hero-copy{max-width:1120px}
+#rfds-xavier-v10 .v10-hero h1{font-size:clamp(52px,7.7vw,122px);line-height:.84;letter-spacing:-.067em;font-weight:700;max-width:11ch;margin:16px 0 30px}
+#rfds-xavier-v10 .v10-hero h1 span{color:var(--orange)}
+#rfds-xavier-v10 .v10-hero-lead{font-size:clamp(19px,2vw,29px);line-height:1.18;max-width:1020px;margin:0;color:#fff}
+#rfds-xavier-v10 .v10-hero-route{display:flex;align-items:center;gap:12px;margin-top:40px;max-width:580px}
+#rfds-xavier-v10 .v10-route-dot{width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 5px rgba(240,91,34,.12);flex:none}
+#rfds-xavier-v10 .v10-route-line{height:1px;flex:1;background:rgba(255,255,255,.35);position:relative;overflow:hidden}
+#rfds-xavier-v10 .v10-route-line::after{content:"";position:absolute;inset:0;background:var(--orange);transform:translateX(-100%);transition:transform 1.4s var(--ease)}
+#rfds-xavier-v10 .v10-hero.is-active .v10-route-line::after{transform:translateX(0)}
+#rfds-xavier-v10 .v10-route-label{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap}
+#rfds-xavier-v10 .v10-scroll-prompt{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.5);font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+#rfds-xavier-v10 .v10-scroll-mark{width:34px;height:1px;background:rgba(255,255,255,.26);position:relative;overflow:hidden}
+#rfds-xavier-v10 .v10-scroll-mark::after{content:"";position:absolute;left:-14px;top:0;width:14px;height:1px;background:var(--orange);animation:v9scan 1.8s ease-in-out infinite}
+@keyframes v9scan{0%{left:-14px}55%,100%{left:34px}}
+
+/* ---------------------------------------------------------------
+   03. HUMAN STORY + CINEMA WINDOWS
+   --------------------------------------------------------------- */
+#rfds-xavier-v10 .v10-dark{background:var(--deep);color:#fff}
+#rfds-xavier-v10 .v10-light{background:#fff;color:var(--ink)}
+#rfds-xavier-v10 .v10-section{min-height:100vh;padding:clamp(100px,12vw,165px) 0;display:grid;align-items:center}
+#rfds-xavier-v10 .v10-two{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(44px,7vw,110px);align-items:center}
+#rfds-xavier-v10 .v10-two--reverse{grid-template-columns:1.08fr .92fr}
+#rfds-xavier-v10 .v10-two--reverse .v10-copy{order:2}
+#rfds-xavier-v10 .v10-copy h2{font-size:clamp(44px,5.8vw,88px);line-height:.88;letter-spacing:-.065em;font-weight:700;max-width:9ch;margin:12px 0 28px}
+#rfds-xavier-v10 .v10-copy p{font-size:clamp(17px,1.45vw,20px);line-height:1.58;color:rgba(255,255,255,.77);margin:0 0 22px}
+#rfds-xavier-v10 .v10-light .v10-copy p{color:#4c5c6e}
+#rfds-xavier-v10 .v10-voice{font-size:clamp(27px,3.1vw,45px)!important;line-height:1.04!important;letter-spacing:-.035em!important;font-weight:700;color:#fff!important;border-left:4px solid var(--orange);padding-left:21px;margin-top:30px!important}
+#rfds-xavier-v10 .v10-light .v10-voice{color:var(--ink)!important}
+#rfds-xavier-v10 .v10-attribution{font-size:11px!important;line-height:1.35!important;color:rgba(255,255,255,.48)!important;margin:12px 0 0 25px!important}
+#rfds-xavier-v10 .v10-light .v10-attribution{color:#718095!important}
+
+#rfds-xavier-v10 .v10-cinema{
+  display:block;width:100%;min-height:580px;padding:0;border:1px solid rgba(255,255,255,.1);border-radius:22px;
+  position:relative;overflow:hidden;background:#09132f;box-shadow:0 28px 80px rgba(0,0,0,.24);cursor:zoom-in;text-align:left;
+}
+#rfds-xavier-v10 .v10-cinema::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(5,13,40,.78) 100%);pointer-events:none}
+#rfds-xavier-v10 .v10-cinema-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease),filter 1.2s var(--ease)}
+#rfds-xavier-v10 .v10-cinema:hover .v10-cinema-poster,#rfds-xavier-v10 .v10-cinema:focus-visible .v10-cinema-poster{transform:scale(1.045);filter:saturate(1.03)}
+#rfds-xavier-v10 .v10-cinema.is-seen .v10-cinema-poster{transform:scale(1.025)}
+#rfds-xavier-v10 .v10-cinema-sheen{position:absolute;inset:-15% 35% -15% -35%;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.10) 48%,transparent 58%);transform:translateX(-40%);transition:transform 1.6s var(--ease);pointer-events:none}
+#rfds-xavier-v10 .v10-cinema.is-seen .v10-cinema-sheen{transform:translateX(120%)}
+#rfds-xavier-v10 .v10-cinema-meta{position:absolute;z-index:3;left:18px;right:18px;bottom:16px;display:flex;justify-content:space-between;align-items:end;gap:20px;color:#fff}
+#rfds-xavier-v10 .v10-cinema-meta strong{font-size:12px;font-weight:700}
+#rfds-xavier-v10 .v10-cinema-meta span{font-size:10px;color:rgba(255,255,255,.68);text-align:right}
+#rfds-xavier-v10 .v10-cinema:focus-visible{outline:2px solid var(--orange);outline-offset:4px}
+#rfds-xavier-v10 .v10-network-frame{position:relative;min-height:100svh}
+#rfds-xavier-v10 .v10-network-node{border:0;border-bottom:1px solid rgba(255,255,255,.24);border-radius:0;padding:12px 0;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+#rfds-xavier-v10 .v10-network-node.is-on{background:transparent;border-color:var(--orange);transform:none}
+#rfds-xavier-v10 .v10-network-node span{font-size:15px}
+#rfds-xavier-v10 .v10-network-core{box-shadow:none}
+#rfds-xavier-v10 .v10-network-svg line{stroke-dasharray:900;stroke-dashoffset:900;transition:stroke-dashoffset .9s var(--ease),stroke .5s var(--ease),opacity .5s var(--ease)}
+#rfds-xavier-v10 .v10-network-svg line.is-on{stroke-dashoffset:0}
+#rfds-xavier-v10 .v10-lightbox{position:fixed;z-index:300;inset:0;display:grid;place-items:center;padding:5vw;background:rgba(5,13,40,.94);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+#rfds-xavier-v10 .v10-lightbox[hidden]{display:none}
+#rfds-xavier-v10 .v10-lightbox-image{max-width:min(1400px,92vw);max-height:88vh;width:auto;height:auto;object-fit:contain;border-radius:16px;box-shadow:0 30px 100px rgba(0,0,0,.45)}
+#rfds-xavier-v10 .v10-lightbox-close{position:absolute;top:22px;right:22px;width:44px;height:44px;border:1px solid rgba(255,255,255,.25);border-radius:50%;background:rgba(255,255,255,.06);color:#fff;font-size:27px;line-height:1;cursor:pointer}
+#rfds-xavier-v10 .v10-lightbox-close:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+
+/* ---------------------------------------------------------------
+   04. RSV — SCROLL VISUALISATION
+   --------------------------------------------------------------- */
+#rfds-xavier-v10 .v10-rsv{background:#fff;color:var(--ink);padding:0;min-height:160vh;position:relative}
+#rfds-xavier-v10 .v10-rsv-sticky{position:sticky;top:0;min-height:100svh;display:grid;align-items:center;overflow:hidden}
+#rfds-xavier-v10 .v10-rsv-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(40px,8vw,120px);align-items:center}
+#rfds-xavier-v10 .v10-rsv-copy{max-width:650px}
+#rfds-xavier-v10 .v10-rsv-copy h2{font-size:clamp(46px,6vw,92px);line-height:.86;letter-spacing:-.065em;margin:12px 0 25px;font-weight:700;max-width:8ch}
+#rfds-xavier-v10 .v10-rsv-copy p{font-size:clamp(18px,1.65vw,23px);line-height:1.48;color:#4c5c6e;margin:0 0 22px}
+#rfds-xavier-v10 .v10-rsv-visual{height:min(70vh,670px);min-height:470px;position:relative;display:grid;place-items:center}
+#rfds-xavier-v10 .v10-rsv-visual::before{content:"";position:absolute;width:min(36vw,480px);height:min(36vw,480px);border-radius:50%;background:radial-gradient(circle,rgba(0,84,159,.08),transparent 68%)}
+#rfds-xavier-v10 .v10-breathing{position:relative;width:min(34vw,420px);height:min(52vh,540px);min-width:280px;min-height:400px}
+#rfds-xavier-v10 .v10-airway{position:absolute;left:50%;top:10%;width:90px;height:58%;transform:translateX(-50%);border:2px solid rgba(0,84,159,.20);border-bottom:0;border-radius:70px 70px 0 0;transition:height .6s var(--ease),width .6s var(--ease),border-color .6s var(--ease)}
+#rfds-xavier-v10 .v10-trachea{position:absolute;left:50%;top:34%;width:18px;height:26%;transform:translateX(-50%);background:rgba(0,84,159,.11);border-radius:999px;transition:width .6s var(--ease),background .6s var(--ease)}
+#rfds-xavier-v10 .v10-lung{position:absolute;top:50%;width:40%;height:42%;background:rgba(0,84,159,.08);border:2px solid rgba(0,84,159,.18);transition:transform .6s var(--ease),background .6s var(--ease),border-color .6s var(--ease),border-radius .6s var(--ease)}
+#rfds-xavier-v10 .v10-lung.left{left:4%;border-radius:55% 45% 48% 52%}
+#rfds-xavier-v10 .v10-lung.right{right:4%;border-radius:45% 55% 52% 48%}
+#rfds-xavier-v10 .v10-oxygen{position:absolute;left:50%;bottom:2%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;opacity:0;transform-origin:center;transition:opacity .6s var(--ease),transform .6s var(--ease)}
+#rfds-xavier-v10 .v10-oxygen-ring{width:46px;height:46px;border:3px solid var(--orange);border-radius:50%;position:relative}
+#rfds-xavier-v10 .v10-oxygen-ring::after{content:"";position:absolute;inset:9px;background:rgba(240,91,34,.16);border-radius:50%}
+#rfds-xavier-v10 .v10-oxygen span{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+#rfds-xavier-v10 .v10-rsv-progress{position:absolute;right:0;bottom:2%;display:flex;gap:6px}
+#rfds-xavier-v10 .v10-rsv-progress i{width:6px;height:6px;border-radius:50%;background:rgba(21,38,61,.15);transition:background .35s var(--ease),transform .35s var(--ease)}
+#rfds-xavier-v10 .v10-rsv-progress i.is-on{background:var(--orange);transform:scale(1.45)}
+#rfds-xavier-v10 .v10-rsv[data-stage="1"] .v10-airway{width:84px;height:64%}
+#rfds-xavier-v10 .v10-rsv[data-stage="2"] .v10-airway{width:58px;height:60%;border-color:rgba(240,91,34,.40)}
+#rfds-xavier-v10 .v10-rsv[data-stage="2"] .v10-lung{background:rgba(240,91,34,.07);border-color:rgba(240,91,34,.24)}
+#rfds-xavier-v10 .v10-rsv[data-stage="3"] .v10-airway{width:42px;height:56%;border-color:rgba(240,91,34,.65)}
+#rfds-xavier-v10 .v10-rsv[data-stage="3"] .v10-trachea{width:12px;background:rgba(240,91,34,.16)}
+#rfds-xavier-v10 .v10-rsv[data-stage="3"] .v10-lung.left{transform:scale(.90,.95)}
+#rfds-xavier-v10 .v10-rsv[data-stage="3"] .v10-lung.right{transform:scale(.90,.95)}
+#rfds-xavier-v10 .v10-rsv[data-stage="4"] .v10-airway{width:34px;height:51%;border-color:rgba(240,91,34,.85)}
+#rfds-xavier-v10 .v10-rsv[data-stage="4"] .v10-lung{background:rgba(240,91,34,.10);border-color:rgba(240,91,34,.38);transform:scale(.84,.88)}
+#rfds-xavier-v10 .v10-rsv[data-stage="4"] .v10-oxygen{opacity:1;transform:translateX(-50%) translateY(-8px)}
+
+/* ---------------------------------------------------------------
+   05. DISTANCE / FLIGHT
+   --------------------------------------------------------------- */
+#rfds-xavier-v10 .v10-flight{min-height:180vh;background:var(--deep);position:relative}
+#rfds-xavier-v10 .v10-flight-sticky{position:sticky;top:0;min-height:100svh;display:grid;align-items:center;overflow:hidden}
+#rfds-xavier-v10 .v10-flight-shell{position:relative;min-height:100svh}
+#rfds-xavier-v10 .v10-flight-head{position:absolute;z-index:8;left:0;top:16vh;max-width:760px}
+#rfds-xavier-v10 .v10-flight-head h2{font-size:clamp(46px,6.2vw,96px);line-height:.85;letter-spacing:-.065em;font-weight:700;max-width:8ch;margin:12px 0 18px}
+#rfds-xavier-v10 .v10-flight-head p{font-size:clamp(17px,1.5vw,21px);line-height:1.52;color:rgba(255,255,255,.67);margin:0;max-width:680px}
+#rfds-xavier-v10 .v10-flight-statement{max-width:680px}
+#rfds-xavier-v10 .v10-flight-map{position:absolute;inset:0}
+#rfds-xavier-v10 .v10-flight-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.032) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.032) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(90deg,transparent 2%,#000 18%,#000 82%,transparent 98%)}
+#rfds-xavier-v10 .v10-map{position:absolute;left:22%;right:9%;top:13%;bottom:7%;display:flex;align-items:center;justify-content:center}
+#rfds-xavier-v10 .v10-map img{width:100%;height:100%;object-fit:contain;filter:brightness(.78) saturate(.20) contrast(1.08);opacity:.86;transition:transform 1.2s var(--ease)}
+#rfds-xavier-v10 .v10-flight.is-near .v10-map img{transform:scale(1.03)}
+#rfds-xavier-v10 .v10-flight-route{position:absolute;left:51.6%;top:70.1%;width:26.1%;height:2px;background:rgba(255,255,255,.14);transform-origin:left center;transform:rotate(3.2deg)}
+#rfds-xavier-v10 .v10-flight-route span{position:absolute;left:0;top:0;height:100%;width:0;background:var(--orange);box-shadow:0 0 15px rgba(240,91,34,.22);transition:width .18s linear}
+#rfds-xavier-v10 .v10-city{position:absolute;z-index:7;display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+#rfds-xavier-v10 .v10-city i{width:10px;height:10px;border-radius:50%;background:var(--orange);border:2px solid #fff;box-shadow:0 0 0 6px rgba(240,91,34,.10)}
+#rfds-xavier-v10 .v10-port{left:49.5%;top:68.8%}.v10-adelaide{left:75.6%;top:71.2%}
+#rfds-xavier-v10 .v10-plane{position:absolute;z-index:8;left:51.8%;top:67.8%;color:#fff;width:28px;transform:rotate(7deg);transition:left .15s linear,opacity .35s ease;filter:drop-shadow(0 4px 8px rgba(0,0,0,.28))}
+#rfds-xavier-v10 .v10-plane svg{width:100%;height:auto;display:block}
+#rfds-xavier-v10 .v10-flight-metrics{position:absolute;z-index:8;left:0;bottom:7vh;display:flex;gap:9px}
+#rfds-xavier-v10 .v10-metric{min-width:150px;padding:14px 15px;border:1px solid rgba(255,255,255,.13);background:rgba(5,13,40,.60);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:14px}
+#rfds-xavier-v10 .v10-metric strong{font-size:31px;line-height:1;letter-spacing:-.045em;font-weight:700}.v10-metric span{display:block;margin-top:7px;font-size:9px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:rgba(255,255,255,.53)}
+#rfds-xavier-v10 .v10-flight-caption{position:absolute;z-index:8;right:0;bottom:7vh;max-width:320px;font-size:12px;line-height:1.45;color:rgba(255,255,255,.62);text-align:right}
+#rfds-xavier-v10 .v10-flight-phase{position:absolute;z-index:8;right:0;top:15vh;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.16);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.56)}
+#rfds-xavier-v10 .v10-flight-phase strong{color:#fff}
+
+/* ---------------------------------------------------------------
+   06. RESPONSE
+   --------------------------------------------------------------- */
+#rfds-xavier-v10 .v10-response{min-height:100vh;padding:clamp(100px,12vw,160px) 0;background:var(--deep)}
+#rfds-xavier-v10 .v10-response-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,100px);align-items:center}
+#rfds-xavier-v10 .v10-response-copy p{font-size:clamp(18px,1.55vw,22px);line-height:1.55;color:rgba(255,255,255,.78);margin:0 0 24px}
+
+/* ---------------------------------------------------------------
+   07. NETWORK / COLLABORATION
+   --------------------------------------------------------------- */
+#rfds-xavier-v10 .v10-network{min-height:170vh;background:var(--deep);position:relative;padding:0}
+#rfds-xavier-v10 .v10-network-sticky{position:sticky;top:0;min-height:100svh;display:grid;align-items:center;overflow:hidden}
+#rfds-xavier-v10 .v10-network-head{position:absolute;z-index:8;left:0;top:11vh;max-width:920px}
+#rfds-xavier-v10 .v10-network-head h2{font-size:clamp(48px,6.3vw,98px);line-height:.85;letter-spacing:-.065em;font-weight:700;margin:12px 0 18px;max-width:8ch}
+#rfds-xavier-v10 .v10-network-head p{font-size:clamp(18px,1.65vw,24px);line-height:1.38;color:rgba(255,255,255,.68);max-width:900px;margin:0}
+#rfds-xavier-v10 .v10-network-visual{position:absolute;inset:0}
+#rfds-xavier-v10 .v10-network-svg{position:absolute;inset:0;width:100%;height:100%}
+#rfds-xavier-v10 .v10-network-svg line{stroke:rgba(255,255,255,.12);stroke-width:1.4;vector-effect:non-scaling-stroke;transition:stroke .5s var(--ease),stroke-width .5s var(--ease),opacity .5s var(--ease)}
+#rfds-xavier-v10 .v10-network-svg line.is-on{stroke:var(--orange);stroke-width:2.5;opacity:1}
+#rfds-xavier-v10 .v10-network-core{position:absolute;left:50%;top:56%;transform:translate(-50%,-50%);width:138px;height:138px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:rgba(5,13,40,.80);display:grid;place-items:center;z-index:8;font-size:12px;font-weight:700;letter-spacing:.14em;box-shadow:0 0 0 16px rgba(240,91,34,.045),0 30px 70px rgba(0,0,0,.28)}
+#rfds-xavier-v10 .v10-network-core::before{content:"";position:absolute;inset:-8px;border:1px solid rgba(240,91,34,.20);border-radius:50%}
+#rfds-xavier-v10 .v10-network-node{position:absolute;z-index:9;width:170px;padding:14px 15px;border:1px solid rgba(255,255,255,.15);background:rgba(5,13,40,.70);border-radius:15px;color:#fff;text-align:left;cursor:pointer;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:transform .35s var(--ease),background .35s var(--ease),border-color .35s var(--ease),opacity .35s var(--ease)}
+#rfds-xavier-v10 .v10-network-node.is-on{transform:translateY(-3px);border-color:rgba(240,91,34,.72);background:rgba(240,91,34,.09)}
+#rfds-xavier-v10 .v10-network-node strong{display:block;color:var(--orange);font-size:10px;letter-spacing:.12em;font-weight:700}.v10-network-node span{display:block;margin-top:7px;font-size:14px;line-height:1.18;font-weight:700}
+#rfds-xavier-v10 .v10-node-local{left:8%;top:33%}.v10-node-medstar{left:26%;bottom:14%}.v10-node-rfds{right:26%;bottom:14%}.v10-node-care{right:8%;top:33%}
+#rfds-xavier-v10 .v10-network-photo{position:absolute;z-index:5;right:7%;top:18%;width:260px;height:170px;overflow:hidden;border-radius:16px;opacity:.88;border:1px solid rgba(255,255,255,.12)}
+#rfds-xavier-v10 .v10-network-photo img{width:100%;height:100%;object-fit:cover}
+#rfds-xavier-v10 .v10-network-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(5,13,40,.65))}
+#rfds-xavier-v10 .v10-network-copy{position:absolute;z-index:10;left:0;right:0;bottom:7vh;display:grid;grid-template-columns:60px 1fr;gap:18px;align-items:start}
+#rfds-xavier-v10 .v10-network-step{opacity:.24;transition:opacity .45s var(--ease),transform .45s var(--ease)}
+#rfds-xavier-v10 .v10-network-step.is-on{opacity:1;transform:translateX(4px)}
+#rfds-xavier-v10 .v10-network-step span{color:var(--orange);font-size:11px;font-weight:700;letter-spacing:.12em}.v10-network-step p{margin:0;color:rgba(255,255,255,.86);font-size:clamp(18px,1.7vw,24px);line-height:1.28;max-width:980px}
+#rfds-xavier-v10 .v10-network-instruction{position:absolute;z-index:10;right:0;bottom:7vh;color:rgba(255,255,255,.38);font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;transform:translateY(32px)}
+
+/* ---------------------------------------------------------------
+   08. TEAM / FINAL QUOTE / OUTCOME
+   --------------------------------------------------------------- */
+#rfds-xavier-v10 .v10-team-quote{min-height:105vh;background:var(--deep);display:grid;align-items:center;padding:110px 0}
+#rfds-xavier-v10 .v10-team-quote blockquote{max-width:1220px;margin:0;font-size:clamp(42px,6.6vw,102px);line-height:.88;letter-spacing:-.067em;font-weight:700}
+#rfds-xavier-v10 .v10-team-quote blockquote .v10-orange{color:var(--orange)}
+#rfds-xavier-v10 .v10-team-quote cite{display:block;margin-top:28px;font-style:normal;font-size:12px;color:rgba(255,255,255,.53);letter-spacing:.02em}
+
+#rfds-xavier-v10 .v10-outcome{min-height:100vh;background:#fff;color:var(--ink);display:grid;align-items:center;padding:120px 0}
+#rfds-xavier-v10 .v10-outcome-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(44px,7vw,105px);align-items:center}
+#rfds-xavier-v10 .v10-outcome h2{font-size:clamp(46px,6.2vw,96px);line-height:.86;letter-spacing:-.067em;font-weight:700;max-width:9ch;margin:12px 0 25px}
+#rfds-xavier-v10 .v10-outcome p{font-size:19px;line-height:1.56;color:#4c5c6e;margin:0 0 22px}
+#rfds-xavier-v10 .v10-outcome-media{aspect-ratio:1/1;border-radius:50%;overflow:hidden;background:#09132f;box-shadow:0 30px 85px rgba(18,36,59,.15)}
+#rfds-xavier-v10 .v10-outcome-media img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+#rfds-xavier-v10 .v10-outcome .v10-voice{color:var(--ink)!important}
+
+/* ---------------------------------------------------------------
+   09. DONATION / FOOTER
+   --------------------------------------------------------------- */
+#rfds-xavier-v10 .v10-footer{background:var(--orange);color:#fff;padding:90px 0}
+#rfds-xavier-v10 .v10-footer-grid{display:flex;justify-content:space-between;align-items:end;gap:40px}
+#rfds-xavier-v10 .v10-footer h2{font-size:clamp(52px,7vw,108px);line-height:.82;letter-spacing:-.07em;font-weight:700;max-width:9ch;margin:12px 0 0}
+#rfds-xavier-v10 .v10-footer p{font-size:16px;line-height:1.5;max-width:500px;margin:0 0 22px;color:rgba(255,255,255,.88)}
+#rfds-xavier-v10 .v10-footer .v10-btn{background:#fff;color:var(--orange);border-color:#fff}
+#rfds-xavier-v10 .v10-footer .v10-btn:hover{color:var(--deep)}
+
+/* Reveal */
+#rfds-xavier-v10 [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+#rfds-xavier-v10 [data-reveal].is-visible{opacity:1;transform:none}
+
+/* Responsive */
+@media(max-width:980px){
+  #rfds-xavier-v10 .v10-two,#rfds-xavier-v10 .v10-two--reverse,#rfds-xavier-v10 .v10-rsv-grid,#rfds-xavier-v10 .v10-response-grid,#rfds-xavier-v10 .v10-outcome-grid{grid-template-columns:1fr}
+  #rfds-xavier-v10 .v10-two--reverse .v10-copy{order:0}
+  #rfds-xavier-v10 .v10-cinema{min-height:520px}
+  #rfds-xavier-v10 .v10-rsv{min-height:145vh}
+  #rfds-xavier-v10 .v10-rsv-sticky{padding:80px 0}
+  #rfds-xavier-v10 .v10-rsv-visual{order:-1;height:55vh}
+  #rfds-xavier-v10 .v10-flight-head{top:12vh}
+  #rfds-xavier-v10 .v10-map{left:12%;right:3%;top:20%;bottom:13%}
+  #rfds-xavier-v10 .v10-network-head{top:10vh}
+  #rfds-xavier-v10 .v10-network-photo{top:21%;right:4%;width:220px;height:140px}
+  #rfds-xavier-v10 .v10-network-copy{bottom:5vh}
+}
+@media(max-width:720px){
+  #rfds-xavier-v10 .v10-header{top:8px;width:calc(100% - 16px)}
+  #rfds-xavier-v10 .v10-logo{width:110px}
+  #rfds-xavier-v10 .v10-header-meta span{display:none}
+  #rfds-xavier-v10 .v10-btn{min-height:36px;padding:0 12px}
+  #rfds-xavier-v10 .v10-rail{left:7px;top:auto;bottom:12px;transform:none;display:flex;gap:0;padding:5px;background:rgba(5,13,40,.84);border:1px solid rgba(255,255,255,.13);border-radius:999px;backdrop-filter:blur(12px)}
+  #rfds-xavier-v10 .v10-rail button{width:22px;height:22px}
+  #rfds-xavier-v10 .v10-rail button::before{inset:8px}
+  #rfds-xavier-v10 .v10-rail button[aria-current="true"]::before{inset:6px}
+  #rfds-xavier-v10 .v10-rail button span{display:none}
+  #rfds-xavier-v10 .v10-hero-inner{padding-top:126px;padding-bottom:75px}
+  #rfds-xavier-v10 .v10-hero h1{font-size:clamp(49px,15.5vw,76px);max-width:11ch}
+  #rfds-xavier-v10 .v10-hero-lead{font-size:18px}
+  #rfds-xavier-v10 .v10-route-line{max-width:90px}
+  #rfds-xavier-v10 .v10-scroll-prompt{bottom:70px}
+  #rfds-xavier-v10 .v10-section,#rfds-xavier-v10 .v10-response,#rfds-xavier-v10 .v10-team-quote,#rfds-xavier-v10 .v10-outcome{padding:90px 0}
+  #rfds-xavier-v10 .v10-copy h2,#rfds-xavier-v10 .v10-rsv-copy h2{font-size:52px}
+  #rfds-xavier-v10 .v10-cinema{min-height:390px;border-radius:18px}
+  #rfds-xavier-v10 .v10-voice{font-size:28px!important}
+  #rfds-xavier-v10 .v10-rsv{min-height:135vh}
+  #rfds-xavier-v10 .v10-rsv-sticky{min-height:100svh}
+  #rfds-xavier-v10 .v10-rsv-grid{gap:10px}
+  #rfds-xavier-v10 .v10-rsv-visual{height:46vh;min-height:360px}
+  #rfds-xavier-v10 .v10-breathing{width:250px;height:360px;min-width:220px;min-height:330px}
+  #rfds-xavier-v10 .v10-rsv-copy p{font-size:17px}
+  #rfds-xavier-v10 .v10-flight{min-height:165vh}
+  #rfds-xavier-v10 .v10-flight-head{top:11vh}
+  #rfds-xavier-v10 .v10-flight-head h2{font-size:50px}
+  #rfds-xavier-v10 .v10-flight-head p{font-size:16px}
+  #rfds-xavier-v10 .v10-map{left:0;right:0;top:26%;bottom:18%}
+  #rfds-xavier-v10 .v10-city{font-size:8px}
+  #rfds-xavier-v10 .v10-port{left:31%;top:69%}.v10-adelaide{left:67%;top:71%}
+  #rfds-xavier-v10 .v10-flight-route{left:34%;top:70%;width:35%}
+  #rfds-xavier-v10 .v10-plane{left:34%;top:67%;width:22px}
+  #rfds-xavier-v10 .v10-flight-metrics{left:0;bottom:3vh;right:0;display:grid;grid-template-columns:1fr 1fr}
+  #rfds-xavier-v10 .v10-metric{min-width:0}.v10-metric strong{font-size:24px}
+  #rfds-xavier-v10 .v10-flight-caption{left:0;right:auto;bottom:12.5vh;text-align:left;max-width:240px}
+  #rfds-xavier-v10 .v10-flight-phase{right:0;top:11vh}
+  #rfds-xavier-v10 .v10-network{min-height:150vh}
+  #rfds-xavier-v10 .v10-network-head{top:8vh}
+  #rfds-xavier-v10 .v10-network-head h2{font-size:51px}
+  #rfds-xavier-v10 .v10-network-head p{font-size:17px}
+  #rfds-xavier-v10 .v10-network-core{width:106px;height:106px;top:52%;font-size:10px}
+  #rfds-xavier-v10 .v10-network-node{width:128px;padding:11px 12px}
+  #rfds-xavier-v10 .v10-node-local{left:0;top:43%}.v10-node-medstar{left:0;bottom:17%}.v10-node-rfds{right:0;bottom:17%}.v10-node-care{right:0;top:43%}
+  #rfds-xavier-v10 .v10-network-photo{left:50%;right:auto;transform:translateX(-50%);top:23%;width:190px;height:118px}
+  #rfds-xavier-v10 .v10-network-copy{grid-template-columns:42px 1fr;gap:10px;bottom:4vh}
+  #rfds-xavier-v10 .v10-network-step p{font-size:16px}
+  #rfds-xavier-v10 .v10-network-instruction{display:none}
+  #rfds-xavier-v10 .v10-team-quote blockquote{font-size:43px}
+  #rfds-xavier-v10 .v10-outcome-media{border-radius:24px;aspect-ratio:4/3}
+  #rfds-xavier-v10 .v10-footer{padding:68px 0}.v10-footer h2{font-size:61px}.v10-footer-grid{display:block}
+}
+@media(prefers-reduced-motion:reduce){
+  #rfds-xavier-v10 *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  #rfds-xavier-v10 [data-reveal]{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div id="rfds-xavier-v10">
+  <!-- ============================================================
+       PHASE 01 — SHELL
+       ============================================================ -->
+  <header class="v10-header">
+    <a href="#x10-hero" aria-label="RFDS SA/NT — Xavier story"><img class="v10-logo" src="https://media.healthdirect.org.au/images/logos/w300/rfds_logo-0231a7.png" alt="Royal Flying Doctor Service"></a>
+    <div class="v10-header-meta"><span>SA / NT · Patient story</span><a class="v10-btn v10-btn--orange" href="https://www.flyingdoctor.org.au/sant/donate/" target="_blank" rel="noopener">Donate</a></div>
+  </header>
+
+  <nav class="v10-rail" aria-label="Story journey">
+    <button data-target="x10-hero" aria-label="Story" aria-current="true"><span>Story</span></button>
+    <button data-target="x10-xavier" aria-label="Xavier"><span>Xavier</span></button>
+    <button data-target="x10-distance" aria-label="Distance"><span>Distance</span></button>
+    <button data-target="x10-response" aria-label="Response"><span>Response</span></button>
+    <button data-target="x10-network" aria-label="Team"><span>Team</span></button>
+    <button data-target="x10-today" aria-label="Today"><span>Today</span></button>
+  </nav>
+
+  <main>
+    <!-- ==========================================================
+         PHASE 02 — HERO / CINEMATIC ENTRY
+         ========================================================== -->
+    <section id="x10-hero" class="v10-hero" data-section>
+      <div class="v10-hero-media" aria-hidden="true">
+        <img src="https://rfds-thumbor.icclient.space/x6xKbYqayuIpmbaWuehWROrFR6Y=/1800x0/original_images/Baby_Xavier_-_NEWBORN.jpg" alt="" loading="eager" fetchpriority="high">
+      </div>
+      <div class="v10-wrap v10-hero-inner">
+        <div class="v10-hero-copy" data-reveal>
+          <div class="v10-kicker v10-orange">RFDS SA / NT · PATIENT STORY</div>
+          <h1>A mother’s worst fear, a team’s finest hour: Saving baby <span>Xavier</span></h1>
+          <p class="v10-hero-lead">For two-month-old Xavier Hosking, what began as a common childhood illness quickly became a life-threatening emergency, requiring a coordinated response from South Australia’s specialist emergency care teams.</p>
+          <div class="v10-hero-route" aria-label="Port Lincoln to Adelaide">
+            <span class="v10-route-dot"></span><span class="v10-route-label">Port Lincoln</span><span class="v10-route-line"></span><span class="v10-route-label">Adelaide</span><span class="v10-route-dot"></span>
+          </div>
+        </div>
+      </div>
+      <div class="v10-scroll-prompt"><span>Scroll to follow</span><span class="v10-scroll-mark"></span></div>
+    </section>
+
+    <!-- ==========================================================
+         PHASE 03 — HUMAN STORY + CINEMA
+         ========================================================== -->
+    <section id="x10-xavier" class="v10-section v10-dark" data-section>
+      <div class="v10-wrap v10-two">
+        <div class="v10-copy" data-reveal>
+          <div class="v10-kicker v10-orange">Xavier</div>
+          <p>As an infant, Xavier faced a serious battle with respiratory syncytial virus (RSV) in his hometown of Port Lincoln.</p>
+          <p class="v10-voice">“I remember looking at Xavier and he just had no colour, and he was not his normal self,” Xavier’s mother Mandy said.</p>
+          <p class="v10-voice">“He was not feeding and his breathing had become worse.”</p>
+        </div>
+        <button class="v10-cinema" data-reveal data-cinema data-immersion="image" type="button" aria-label="Open Xavier and Mandy photograph">
+          <img class="v10-cinema-poster" src="https://rfds-thumbor.icclient.space/aEYazp-O8MakYYxuQhpad6p6WVs=/1800x0/original_images/Recent_image_of_Xavier_and_Mandy_.jpg" alt="Xavier and Mandy" loading="lazy">
+          <span class="v10-cinema-sheen" aria-hidden="true"></span>
+          <span class="v10-cinema-meta"><strong>XAVIER + MANDY</strong><span>Open image</span></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         PHASE 04 — RSV SCROLL VISUALISATION
+         ========================================================== -->
+    <section id="x10-rsv" class="v10-rsv" data-section data-rsv-stage="0">
+      <div class="v10-rsv-sticky">
+        <div class="v10-wrap v10-rsv-grid">
+          <div class="v10-rsv-copy" data-reveal>
+            <div class="v10-kicker v10-orange">RSV</div>
+            <p>RSV is highly dangerous for babies, particularly those under six months, as it can cause severe lower respiratory tract infections like bronchiolitis and pneumonia.</p>
+            <p>Because infants have narrow airways and developing immune systems, they frequently require hospitalisation and oxygen support when infected.</p>
+          </div>
+          <div class="v10-rsv-visual" aria-label="Abstract scroll-controlled visualisation of breathing and oxygen support" data-reveal>
+            <div class="v10-breathing">
+              <div class="v10-airway"></div>
+              <div class="v10-trachea"></div>
+              <div class="v10-lung left"></div>
+              <div class="v10-lung right"></div>
+              <div class="v10-oxygen"><div class="v10-oxygen-ring"></div><span>Oxygen support</span></div>
+            </div>
+            <div class="v10-rsv-progress" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         PHASE 05 — DISTANCE / FLIGHT
+         ========================================================== -->
+    <section id="x10-distance" class="v10-flight" data-section>
+      <div class="v10-flight-sticky">
+        <div class="v10-wrap v10-flight-shell">
+          <div class="v10-flight-head" data-reveal>
+            <div class="v10-kicker v10-orange">Distance</div>
+            <p class="v10-flight-statement">For families in regional areas, distance can add another layer of complexity. While Port Lincoln is a seven-hour drive from Adelaide, it is less than an hour away by air – a critical difference when every minute counts.</p>
+          </div>
+
+          <div class="v10-flight-map" aria-label="South Australia map showing the journey from Port Lincoln to Adelaide">
+            <div class="v10-flight-grid" aria-hidden="true"></div>
+            <div class="v10-map">
+              <img src="https://raw.githubusercontent.com/zuccs/Australian-State-SVG-Icons/master/south-australia.svg" alt="South Australia" loading="lazy">
+              <div class="v10-flight-route" aria-hidden="true"><span id="x10-route-progress"></span></div>
+              <div class="v10-city v10-port"><i></i>Port Lincoln</div>
+              <div class="v10-city v10-adelaide"><i></i>Adelaide</div>
+              <div class="v10-plane" id="x10-plane" aria-hidden="true">
+                <svg viewBox="0 0 32 20" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M1 8.2 13.8 9l3.2-7.5c.2-.5.8-.8 1.3-.6l1.5.6-1.5 7.7 10.5 1.1c.7.1 1.1.7.9 1.3l-.5 1.3-10.9-.2-2.6 6.6-1.4-.1-1.1-.2 1-6.4L2.2 12 1 8.2Z"/></svg>
+              </div>
+            </div>
+            <div class="v10-flight-phase">Journey <strong id="x10-flight-phase">ready</strong></div>
+            <div class="v10-flight-metrics">
+              <div class="v10-metric"><strong>7 hours</strong><span>by road</span></div>
+              <div class="v10-metric"><strong class="v10-orange">&lt; 1 hour</strong><span>by air</span></div>
+            </div>
+            <div class="v10-flight-caption">A critical difference when every minute counts.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         PHASE 06 — RESPONSE + CINEMA
+         ========================================================== -->
+    <section id="x10-response" class="v10-response" data-section>
+      <div class="v10-wrap v10-response-grid">
+        <div class="v10-response-copy" data-reveal>
+          <div class="v10-kicker v10-orange">Response</div>
+          <p>When Xavier's condition worsened, a network of local clinicians, the Royal Flying Doctor Service SA/NT (RFDS) and SA Ambulance (SAAS) MedSTAR worked together to coordinate his transfer to Adelaide for life-saving treatment.</p>
+          <p class="v10-voice">“As his condition deteriorated rapidly, local clinicians had no choice but to insert a nasogastric tube and oxygen, at which stage we had to be flown,” Mandy, Xavier's mother.</p>
+          <p class="v10-voice">“The SAAS MedSTAR and RFDS crew arrived and we were so looked after – from the flight to the road ambulance in Adelaide to the hospital.”</p>
+        </div>
+        <button class="v10-cinema" data-reveal data-cinema data-immersion="image" type="button" aria-label="Open Xavier with SAAS MedSTAR doctor photograph">
+          <img class="v10-cinema-poster" src="https://rfds-thumbor.icclient.space/8vvh4W7Yw-nAFaxFbOKIiCmiYRI=/1800x0/original_images/Hosking-Family-ADLBaseVisit-Jul26-low-res-21.jpg" alt="Xavier with SAAS MedSTAR doctor" loading="lazy">
+          <span class="v10-cinema-sheen" aria-hidden="true"></span>
+          <span class="v10-cinema-meta"><strong>XAVIER + MEDSTAR</strong><span>Open image</span></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         PHASE 07 — NETWORK / COLLABORATION
+         ========================================================== -->
+    <section id="x10-network" class="v10-network" data-section>
+      <div class="v10-network-sticky">
+        <div class="v10-wrap v10-network-frame">
+          <div class="v10-network-head" data-reveal>
+            <div class="v10-kicker v10-orange">The network</div>
+            <p>Tasked with caring for Xavier, SAAS MedSTAR Paediatric Retrieval Consultant Dr Bron Hennebry said strong collaboration between regional clinicians, retrieval specialists and aeromedical crews is essential to ensuring critically ill children receive specialist care as quickly as possible.</p>
+          </div>
+
+          <div class="v10-network-visual" aria-label="The network of care around Xavier">
+            <svg class="v10-network-svg" viewBox="0 0 1000 700" aria-hidden="true">
+              <line id="x10-line-1" x1="500" y1="390" x2="145" y2="250"></line>
+              <line id="x10-line-2" x1="500" y1="390" x2="315" y2="585"></line>
+              <line id="x10-line-3" x1="500" y1="390" x2="685" y2="585"></line>
+              <line id="x10-line-4" x1="500" y1="390" x2="855" y2="250"></line>
+            </svg>
+            <div class="v10-network-core">XAVIER</div>
+            <button class="v10-network-node v10-node-local" data-network-step="1"><strong>LOCAL</strong><span>Regional clinicians</span></button>
+            <button class="v10-network-node v10-node-medstar" data-network-step="2"><strong>MEDSTAR</strong><span>SAAS MedSTAR</span></button>
+            <button class="v10-network-node v10-node-rfds" data-network-step="3"><strong>RFDS</strong><span>RFDS aeromedical crew</span></button>
+            <button class="v10-network-node v10-node-care" data-network-step="4"><strong>CARE</strong><span>Adelaide specialist treatment</span></button>
+            <div class="v10-network-photo"><img src="https://rfds-thumbor.icclient.space/QXiinebbYHHIqVbNyU5qQOPLY7k=/1800x0/original_images/Hosking-Family-ADLBaseVisit-Jul26-low-res-39.jpg" alt="Hosking family at the RFDS base" loading="lazy"></div>
+          </div>
+
+          <div class="v10-network-copy" aria-live="polite">
+            <div class="v10-network-step" data-network-copy="1"><span>01</span><p>“From the moment we get called for a tasking, there's a great synergy between organisations,” Dr Hennebry said.</p></div>
+            <div class="v10-network-step" data-network-copy="2"><span>02</span><p>“The retrieval team at SAAS MedSTAR is working with the referring clinicians to offer advice and management parameters. Meanwhile our Nurse Retrieval consultants coordinate with the RFDS on aeromedical preparations so we’re in the best position to retrieve the patient.</p></div>
+            <div class="v10-network-step" data-network-copy="3"><span>03</span><p>"Having that joined-up working environment between SAAS MedSTAR and the RFDS aeromedical teams makes it easier to deliver great patient care.”</p></div>
+          </div>
+          <div class="v10-network-instruction">Scroll to build the network</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         PHASE 08 — TEAM QUOTE
+         ========================================================== -->
+    <section class="v10-team-quote" data-section>
+      <div class="v10-wrap" data-reveal>
+        <div class="v10-kicker v10-orange">The team</div>
+        <blockquote>“Patients don’t see two separate organisations – they see a <span class="v10-orange">team</span>. That’s exactly how it should be. The partnership means patients like Xavier receive seamless care, from the moment they’re stabilised, through to transfer and treatment,”</blockquote>
+        <cite>Flight Nurse Manager Ben Poppit.</cite>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         PHASE 08 — OUTCOME
+         ========================================================== -->
+    <section id="x10-today" class="v10-outcome" data-section>
+      <div class="v10-wrap v10-outcome-grid">
+        <div data-reveal>
+          <div class="v10-kicker v10-orange">Today</div>
+          <h2>Today, Xavier is a thriving three-year-old, thanks to the quick response of our vital health chain.</h2>
+          <p>Looking back, Mandy knows how fortunate her family was to have that network of care when they needed it most.</p>
+          <p class="v10-voice">“Knowing there was a whole network of people working together to care for Xavier gave me such peace of mind. The feeling of being supported is so special when you live in a regional community,” Mandy, Xavier's mother.</p>
+        </div>
+        <div class="v10-outcome-media" data-reveal>
+          <img src="https://rfds-thumbor.icclient.space/aEYazp-O8MakYYxuQhpad6p6WVs=/1800x0/original_images/Recent_image_of_Xavier_and_Mandy_.jpg" alt="Mandy and Xavier" loading="lazy">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       PHASE 09 — DONATION / NEXT STORY
+       ============================================================ -->
+  <footer class="v10-footer">
+    <div class="v10-wrap v10-footer-grid">
+      <div>
+        <div class="v10-kicker">RFDS SA / NT</div>
+        <h2>The next story starts here &gt;</h2>
+      </div>
+      <div>
+        <p>Patient submission portal to make story acquisition easier</p>
+        <a class="v10-btn" href="https://www.flyingdoctor.org.au/sant/share-your-story/" target="_blank" rel="noopener">Share your RFDS story →</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="v10-lightbox" id="x10-lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Story image">
+    <button class="v10-lightbox-close" type="button" aria-label="Close image">×</button>
+    <img class="v10-lightbox-image" src="" alt="">
+  </div>
+</div>
+
+<script>
+(function(){
+  const root = document.getElementById('rfds-xavier-v10');
+  if(!root) return;
+
+  const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const sections = [...root.querySelectorAll('[data-section]')];
+  const sectionById = id => root.querySelector('#' + id);
+  const rail = [...root.querySelectorAll('.v10-rail button')];
+
+  /* ------------------------------------------------------------
+     Shared reveal system
+     ------------------------------------------------------------ */
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin:'0px 0px -10% 0px', threshold:.05 });
+  root.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
+
+  /* ------------------------------------------------------------
+     Phase 01 navigation — keyboard/click navigation + current state
+     ------------------------------------------------------------ */
+  const railTargets = rail.map(btn => btn.dataset.target);
+  const navTo = id => {
+    const target = sectionById(id);
+    if(target) target.scrollIntoView({behavior:reduced?'auto':'smooth', block:'start'});
+  };
+  rail.forEach(btn => btn.addEventListener('click', () => navTo(btn.dataset.target)));
+
+  const activeObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(!entry.isIntersecting) return;
+      const id = entry.target.id;
+      rail.forEach(btn => btn.setAttribute('aria-current', String(btn.dataset.target === id)));
+    });
+  }, {rootMargin:'-42% 0px -42% 0px', threshold:.01});
+  sections.forEach(s => { if(s.id) activeObserver.observe(s); });
+
+  /* ------------------------------------------------------------
+     Phase 02 hero route activation
+     ------------------------------------------------------------ */
+  const hero = sectionById('x10-hero');
+  if(hero){
+    const heroObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) hero.classList.add('is-active');
+      });
+    }, {threshold:.45});
+    heroObs.observe(hero);
+  }
+
+  /* ------------------------------------------------------------
+     Phase 03 cinema windows
+     Poster-first immersive media windows. Approved video can be
+     introduced later without changing the surrounding layout.
+     ------------------------------------------------------------ */
+  const cinemas = [...root.querySelectorAll('[data-cinema]')];
+  const cinemaObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const card = entry.target;
+      if(entry.isIntersecting){
+        card.classList.add('is-seen');
+      }
+    });
+  }, {threshold:.3});
+  cinemas.forEach(card => cinemaObserver.observe(card));
+
+  /* ------------------------------------------------------------
+     Phase 04 RSV — scroll controls visual stage 0 → 4
+     ------------------------------------------------------------ */
+  const rsv = sectionById('x10-rsv');
+  if(rsv){
+    let ticking = false;
+    const updateRSV = () => {
+      const rect = rsv.getBoundingClientRect();
+      const travel = Math.max(1, rsv.offsetHeight - window.innerHeight);
+      const progress = Math.max(0, Math.min(1, -rect.top / travel));
+      const stage = Math.min(4, Math.floor(progress * 4.999));
+      rsv.setAttribute('data-stage', String(stage));
+      const dots = [...root.querySelectorAll('.v10-rsv-progress i')];
+      dots.forEach((dot,i) => dot.classList.toggle('is-on', i <= stage));
+      ticking = false;
+    };
+    const onScrollRSV = () => { if(!ticking){ requestAnimationFrame(updateRSV); ticking = true; } };
+    window.addEventListener('scroll', onScrollRSV, {passive:true});
+    updateRSV();
+  }
+
+  /* ------------------------------------------------------------
+     Phase 05 flight — continuous scroll progress
+     ------------------------------------------------------------ */
+  const flight = sectionById('x10-distance');
+  const routeProgress = root.querySelector('#x10-route-progress');
+  const plane = root.querySelector('#x10-plane');
+  const phase = root.querySelector('#x10-flight-phase');
+  if(flight && routeProgress && plane){
+    let ticking = false;
+    const updateFlight = () => {
+      const rect = flight.getBoundingClientRect();
+      const travel = Math.max(1, flight.offsetHeight - window.innerHeight);
+      const p = Math.max(0, Math.min(1, -rect.top / travel));
+      const local = Math.max(0, Math.min(1, p * 1.35));
+      routeProgress.style.width = (local * 100).toFixed(2) + '%';
+      plane.style.left = (51.8 + (23.7 * local)).toFixed(2) + '%';
+      flight.classList.toggle('is-near', p > .55);
+      phase.textContent = p < .20 ? 'route set' : p < .48 ? 'departing Port Lincoln' : p < .82 ? 'en route' : 'approaching Adelaide';
+      ticking = false;
+    };
+    const onFlight = () => { if(!ticking){ requestAnimationFrame(updateFlight); ticking=true; } };
+    window.addEventListener('scroll', onFlight, {passive:true});
+    updateFlight();
+  }
+
+  /* ------------------------------------------------------------
+     Phase 07 network — map state is linked to reading position.
+     Clicking nodes is an optional shortcut.
+     ------------------------------------------------------------ */
+  const network = sectionById('x10-network');
+  const nodes = [...root.querySelectorAll('.v10-network-node')];
+  const lines = [...root.querySelectorAll('.v10-network-svg line')];
+  const copies = [...root.querySelectorAll('.v10-network-step')];
+  const setNetwork = step => {
+    const nStep = Math.max(1, Math.min(4, Number(step) || 1));
+    nodes.forEach(n => {
+      const s = Number(n.dataset.networkStep);
+      n.classList.toggle('is-on', s <= nStep);
+    });
+    lines.forEach(l => {
+      const s = Number(l.id.replace('x10-line-',''));
+      l.classList.toggle('is-on', s <= nStep);
+    });
+    const copyStep = Math.min(3, nStep);
+    copies.forEach(c => c.classList.toggle('is-on', c.dataset.networkCopy === String(copyStep)));
+  };
+  if(network){
+    let netTicking = false;
+    const updateNetwork = () => {
+      const rect = network.getBoundingClientRect();
+      const travel = Math.max(1, network.offsetHeight - window.innerHeight);
+      const p = Math.max(0, Math.min(1, -rect.top / travel));
+      const step = Math.min(4, Math.max(1, Math.floor(p * 4) + 1));
+      setNetwork(step);
+      netTicking = false;
+    };
+    const onNetworkScroll = () => { if(!netTicking){ requestAnimationFrame(updateNetwork); netTicking=true; } };
+    window.addEventListener('scroll', onNetworkScroll, {passive:true});
+    updateNetwork();
+  }
+
+  nodes.forEach(node => node.addEventListener('click', () => {
+    const target = copies.find(c => c.dataset.networkCopy === node.dataset.networkStep);
+    setNetwork(node.dataset.networkStep);
+    if(target) target.scrollIntoView({behavior:reduced?'auto':'smooth', block:'center'});
+  }));
+
+
+  /* ------------------------------------------------------------
+     Immersive cinema windows — image lightbox + optional video hook
+     ------------------------------------------------------------ */
+  const lightbox = root.querySelector('#x10-lightbox');
+  const lightboxImg = lightbox && lightbox.querySelector('.v10-lightbox-image');
+  const lightboxClose = lightbox && lightbox.querySelector('.v10-lightbox-close');
+  let lastFocus = null;
+  const closeLightbox = () => {
+    if(!lightbox) return;
+    lightbox.hidden = true;
+    lightbox.setAttribute('aria-hidden','true');
+    if(lightboxImg) lightboxImg.src = '';
+    if(lastFocus) lastFocus.focus();
+  };
+  cinemas.forEach(card => {
+    card.addEventListener('click', () => {
+      const img = card.querySelector('.v10-cinema-poster');
+      if(!img || !lightbox || !lightboxImg) return;
+      lastFocus = card;
+      lightboxImg.src = img.currentSrc || img.src;
+      lightboxImg.alt = img.alt || '';
+      lightbox.hidden = false;
+      lightbox.setAttribute('aria-hidden','false');
+      requestAnimationFrame(() => lightboxClose && lightboxClose.focus());
+    });
+  });
+  if(lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if(lightbox) lightbox.addEventListener('click', e => { if(e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape' && lightbox && !lightbox.hidden) closeLightbox();
+  });
+
+  /* Smoothly focus the first content after the hero via touchpad/mouse wheel
+     is intentionally NOT intercepted: natural scrolling is the interaction. */
+})();
+</script>
+</body>
+</html>
